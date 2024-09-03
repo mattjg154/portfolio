@@ -10,22 +10,31 @@
   }
 
   .project-wrapper {
+    display: flex;
+    flex-wrap: wrap;  // Allows rows to wrap if necessary
+    gap: 2rem;        // Adds spacing between items
     margin-bottom: 15rem;
+    justify-content: space-between;  // Distributes rows evenly
 
     @include respond(phone) {
       margin-bottom: 0rem;
+      flex-direction: column;  // Stack rows vertically on smaller screens
     }
 
     .row {
-      margin-bottom: 8rem;
+      flex: 1 1 calc(50% - 2rem);  // Each row takes up 50% of the width minus the gap
+      margin-bottom: 5rem;
+      box-sizing: border-box;  // Includes padding and border in the element's width
 
       @include respond(phone) {
+        flex: 1 1 100%;  // Full width on smaller screens
         margin-bottom: 4rem;
       }
     }
 
     &__text {
       text-align: left;
+      flex-wrap: wrap;
 
       @include respond(phone) {
         margin-bottom: 2.5rem !important;
@@ -35,6 +44,7 @@
       }
 
       &-title {
+        margin-top: 5rem;
         font-weight: bold;
         margin-bottom: 1.8rem;
         font-size: $mid-font-size;
