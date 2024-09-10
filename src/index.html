@@ -121,7 +121,7 @@
                   <p class="mb-4">
                     As part of my final year of university, I created a web application that enables guitarists to play along to
                     songs by linking Spotify and Ultimate Guitar. I used Spotify's Web Developer SDK to link to a user's
-                    account and retrieve plaback information, and then scraped Ultimate Guitar to retrieve the most appropriate
+                    account and retrieve playback information, and then scraped Ultimate Guitar to retrieve the most appropriate
                     tablature or chord sheet using that data. I am currently working on making this application publically available.
                   </p>
                 </div>
@@ -278,10 +278,13 @@
         <div class="contact-wrapper load-hidden">
           <p class="contact-wrapper__text">Email me at: matthewjgoulding@gmail.com</p>
           <a
+            id = "contactButton"
             rel="noreferrer"
             target="_blank"
             class="cta-btn cta-btn--resume"
-            onclick="navigator.clipboard.writeText('matthewjgoulding@gmail.com')"
+            onclick="navigator.clipboard.writeText('matthewjgoulding@gmail.com'); 
+                     document.getElementById('contactButton').innerHTML = 'Copied to clipboard!';
+                     setTimeout(() => {document.getElementById('contactButton').innerHTML = 'Copy to clipboard';}, 2000);"
             >Copy to clipboard</a
           >
         </div>
